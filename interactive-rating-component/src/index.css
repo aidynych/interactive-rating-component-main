@@ -1,0 +1,204 @@
+:root {
+  --ff-overpass: "Overpass", sans-serif;
+
+  --fs-400: 0.9rem;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --clr-primary-orange: hsl(25, 97%, 53%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-grey: hsl(217, 12%, 63%);
+  --clr-medium-grey: hsl(216, 12%, 54%);
+  --clr-dark-blue: hsl(213, 19%, 18%);
+  --clr-very-dark-blue: hsl(216, 12%, 8%);
+
+  --clr-very-dar-blue-gradient: hsla(216, 12%, 9%, 1);
+
+  --clr-transparent-background: hsla(216, 12%, 54%, 0.1);
+
+  --clr-dark-blue-gradik: 213, 19%, 18%;
+  --clr-very-dark-: 216, 12%, 8%;
+
+  --gradient-primary: linear-gradient(
+    var(--clr-very-dark-blue),
+    var(--clr-very-dark-blue),
+    0
+  );
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: var(--ff-overpass);
+  background-color: var(--clr-very-dark-blue);
+  display: grid;
+  color: var(--clr-light-grey);
+  place-items: center;
+  min-height: 100vh;
+  align-items: center;
+  margin-inline: auto;
+}
+h1 {
+  color: var(--clr-white);
+}
+
+.card {
+  background: linear-gradient(
+    var(--clr-dark-blue),
+    var(--clr-very-dar-blue-gradient)
+  );
+  display: grid;
+  gap: 1.5rem;
+  text-align: start;
+  padding: 2rem 1.25rem;
+  border-radius: 1rem;
+  margin: 1.5rem;
+  max-width: 380px;
+}
+.background-circled {
+  background-color: var(--clr-transparent-background);
+  display: grid;
+  width: 2.75rem;
+  place-content: center;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-size: var(--fs-400);
+  border: 0;
+  color: var(--clr-light-grey);
+}
+.background-circled[data-button="button"] {
+  border: 0;
+  color: var(--clr-light-grey);
+}
+.background-circled[data-button="button"]:is(:active, :focus) {
+  background-color: var(--clr-primary-orange);
+  color: var(--clr-white);
+}
+.background-circled[data-button="button"]:hover {
+  background-color: var(--clr-light-grey);
+  color: var(--clr-white);
+}
+
+.card p {
+  font-size: var(--fs-400);
+}
+
+.rating-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  place-content: center;
+  gap: 1rem;
+}
+
+.button {
+  background-color: var(--clr-primary-orange);
+  border: 0;
+  color: var(--clr-white);
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+  padding: 0.75rem 0;
+  border-radius: 10rem;
+  letter-spacing: 2px;
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--clr-white);
+  color: var(--clr-primary-orange);
+}
+
+.thank-you-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(
+    var(--clr-dark-blue),
+    var(--clr-very-dar-blue-gradient)
+  );
+  padding: 2rem 1.25rem;
+  border-radius: 1rem;
+  max-width: 380px;
+  margin: 1.5rem;
+}
+
+.flex-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.flex-group h1 {
+  color: var(--clr-white);
+}
+
+.rating-selected {
+  background-color: var(--clr-transparent-background);
+  display: grid;
+  width: 11rem;
+  place-content: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: var(--fs-400);
+  color: var(--clr-primary-orange);
+  opacity: 0.9;
+}
